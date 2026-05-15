@@ -40,6 +40,7 @@ function validateSlots(matchups) {
   let updated = { ...matchups };
 
   for (const id of ids) {
+    if (getRound(id) < 2) continue; // R1 actors are seeded — never clear them
     const matchup = updated[id];
     let newSlots = null;
     let newWinnerId = matchup.winnerId;
