@@ -237,7 +237,6 @@ body {
 .actor-slot.winner {
   background: var(--win);
   border-left: 3px solid var(--win-border);
-  cursor: default;
 }
 
 .actor-slot.loser {

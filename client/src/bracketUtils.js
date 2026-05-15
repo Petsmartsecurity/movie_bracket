@@ -77,26 +77,30 @@ function validateSlots(matchups) {
 
 export function selectWinner(state, matchupId, slotIndex) {
   const matchup = state.matchups[matchupId];
-  const newWinner = matchup.slots[slotIndex];
-  if (!newWinner.actorId) return state;
-  if (matchup.winnerId === newWinner.actorId) return state;
+  const clicked = matchup.slots[slotIndex];
+  if (!clicked.actorId) return state;
 
   let newMatchups = { ...state.matchups };
-  newMatchups[matchupId] = { ...newMatchups[matchupId], winnerId: newWinner.actorId };
 
-  const next = getNextSlot(matchupId);
-  if (next) {
-    const actor = state.actorMap[newWinner.actorId];
-    const film = actor?.roundFilms?.[next.round] ?? null;
-    const nextMatchup = newMatchups[next.id];
-    const newSlots = [...nextMatchup.slots];
-    newSlots[next.slot] = { actorId: newWinner.actorId, film };
-    newMatchups[next.id] = { ...nextMatchup, slots: newSlots };
+  if (matchup.winnerId === clicked.actorId) {
+    // Second click on the current winner — deselect
+    newMatchups[matchupId] = { ...newMatchups[matchupId], winnerId: null };
+  } else {
+    // New winner selected
+    newMatchups[matchupId] = { ...newMatchups[matchupId], winnerId: clicked.actorId };
+
+    const next = getNextSlot(matchupId);
+    if (next) {
+      const actor = state.actorMap[clicked.actorId];
+      const film = actor?.roundFilms?.[next.round] ?? null;
+      const nextMatchup = newMatchups[next.id];
+      const newSlots = [...nextMatchup.slots];
+      newSlots[next.slot] = { actorId: clicked.actorId, film };
+      newMatchups[next.id] = { ...nextMatchup, slots: newSlots };
+    }
   }
 
-  // Validate all slots in round order — clears any that no longer have a valid feeder winner
   newMatchups = validateSlots(newMatchups);
-
   return { ...state, matchups: newMatchups };
 }
 
