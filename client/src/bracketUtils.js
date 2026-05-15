@@ -12,25 +12,57 @@ function getNextSlot(matchupId) {
   return null;
 }
 
-// Recursively remove an actor from all downstream matchups they were placed into
-function clearDownstream(matchups, fromMatchupId, actorId) {
-  const next = getNextSlot(fromMatchupId);
-  if (!next) return matchups;
+// Returns the matchup ID that feeds into a given slot
+function getFeedingMatchupId(matchupId, slotIdx) {
+  const divMatch = matchupId.match(/^div(\d+)-r(\d+)-m(\d+)$/);
+  if (divMatch) {
+    const [, d, r, m] = divMatch.map(Number);
+    if (r === 1) return null; // seeded — no upstream matchup
+    return `div${d}-r${r - 1}-m${m * 2 + slotIdx}`;
+  }
+  const ffMatch = matchupId.match(/^ff-(\d+)$/);
+  if (ffMatch) return `div${Number(ffMatch[1]) * 2 + slotIdx}-r3-m0`;
+  if (matchupId === 'champ') return `ff-${slotIdx}`;
+  return null;
+}
 
-  const nextMatchup = matchups[next.id];
-  if (!nextMatchup) return matchups;
-  if (nextMatchup.slots[next.slot]?.actorId !== actorId) return matchups;
+function getRound(matchupId) {
+  const divMatch = matchupId.match(/^div\d+-r(\d+)-m\d+$/);
+  if (divMatch) return Number(divMatch[1]);
+  if (/^ff-\d+$/.test(matchupId)) return 4;
+  if (matchupId === 'champ') return 5;
+  return 0;
+}
 
+// Walk matchups in round order; clear any slot whose actor didn't win their feeding matchup
+function validateSlots(matchups) {
+  const ids = Object.keys(matchups).sort((a, b) => getRound(a) - getRound(b));
   let updated = { ...matchups };
 
-  // If they also won the next matchup, keep clearing further down
-  if (nextMatchup.winnerId === actorId) {
-    updated = clearDownstream(updated, next.id, actorId);
-  }
+  for (const id of ids) {
+    const matchup = updated[id];
+    let newSlots = null;
+    let newWinnerId = matchup.winnerId;
 
-  const newSlots = [...nextMatchup.slots];
-  newSlots[next.slot] = { actorId: null, film: null };
-  updated[next.id] = { ...nextMatchup, slots: newSlots, winnerId: null };
+    for (let slotIdx = 0; slotIdx < 2; slotIdx++) {
+      const slot = matchup.slots[slotIdx];
+      if (!slot.actorId) continue;
+
+      const feedingId = getFeedingMatchupId(id, slotIdx);
+      if (!feedingId) continue; // R1 seed — always valid
+
+      const feeder = updated[feedingId];
+      if (feeder?.winnerId === slot.actorId) continue; // still valid
+
+      if (!newSlots) newSlots = [...matchup.slots];
+      if (newWinnerId === slot.actorId) newWinnerId = null;
+      newSlots[slotIdx] = { actorId: null, film: null };
+    }
+
+    if (newSlots) {
+      updated = { ...updated, [id]: { ...matchup, slots: newSlots, winnerId: newWinnerId } };
+    }
+  }
 
   return updated;
 }
@@ -42,12 +74,6 @@ export function selectWinner(state, matchupId, slotIndex) {
   if (matchup.winnerId === newWinner.actorId) return state;
 
   let newMatchups = { ...state.matchups };
-
-  // Clear old winner's downstream picks before placing new winner
-  if (matchup.winnerId) {
-    newMatchups = clearDownstream(newMatchups, matchupId, matchup.winnerId);
-  }
-
   newMatchups[matchupId] = { ...newMatchups[matchupId], winnerId: newWinner.actorId };
 
   const next = getNextSlot(matchupId);
@@ -60,13 +86,16 @@ export function selectWinner(state, matchupId, slotIndex) {
     newMatchups[next.id] = { ...nextMatchup, slots: newSlots };
   }
 
+  // Validate all slots in round order — clears any that no longer have a valid feeder winner
+  newMatchups = validateSlots(newMatchups);
+
   return { ...state, matchups: newMatchups };
 }
 
 export function isComplete(matchups) {
   return Object.values(matchups).every(m =>
-    m.slots.every(s => s.actorId === null || s.actorId !== null) && // both slots filled or TBD
-    (m.slots.some(s => s.actorId === null) || m.winnerId !== null)  // either TBD or decided
+    m.slots.every(s => s.actorId === null || s.actorId !== null) &&
+    (m.slots.some(s => s.actorId === null) || m.winnerId !== null)
   );
 }
 
