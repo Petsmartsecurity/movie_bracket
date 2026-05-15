@@ -1,6 +1,6 @@
 import Matchup from './Matchup';
 
-export default function Division({ divIndex, name, matchups, actorMap, onSelectWinner, reversed }) {
+export default function Division({ divIndex, name, matchups, actorMap, onSelectWinner, reversed, submitted }) {
   const rounds = [0, 1, 2, 3].map(round => {
     const count = Math.pow(2, 3 - round);
     return Array.from({ length: count }, (_, i) => matchups[`div${divIndex}-r${round}-m${i}`]);
@@ -20,7 +20,7 @@ export default function Division({ divIndex, name, matchups, actorMap, onSelectW
             <div className="round-matchups">
               {roundMatchups.map(m => (
                 <div key={m.id} className="matchup-cell">
-                  <Matchup matchup={m} actorMap={actorMap} onSelectWinner={onSelectWinner} />
+                  <Matchup matchup={m} actorMap={actorMap} onSelectWinner={onSelectWinner} submitted={submitted} />
                 </div>
               ))}
             </div>

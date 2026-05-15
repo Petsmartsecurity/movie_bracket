@@ -29,13 +29,81 @@ body {
 }
 
 .app-header {
-  text-align: center;
-  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
   border-bottom: 1px solid var(--border);
 }
 
-.app-header h1 { font-size: 22px; color: var(--accent); }
-.app-header p  { color: var(--muted); margin-top: 4px; }
+.app-header-left h1 { font-size: 22px; color: var(--accent); }
+.app-header-left p  { color: var(--muted); margin-top: 4px; font-size: 12px; }
+.app-header-right   { display: flex; align-items: center; gap: 12px; }
+
+.submit-btn {
+  background: var(--accent);
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.submit-btn:disabled { opacity: 0.6; cursor: default; }
+
+.submit-error    { color: #e05050; font-size: 12px; }
+.submitted-badge { color: var(--win-border); font-weight: 600; font-size: 13px; }
+
+/* ── Name Entry ──────────────────────────────────────────────────────────── */
+
+.name-entry-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.name-entry-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 40px;
+  width: 360px;
+  text-align: center;
+}
+
+.name-entry-card h2 { font-size: 20px; color: var(--accent); margin-bottom: 10px; }
+.name-entry-card p  { color: var(--muted); margin-bottom: 24px; font-size: 14px; }
+
+.name-input {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  font-size: 15px;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  outline: none;
+}
+.name-input:focus { border-color: var(--accent); }
+
+.name-submit-btn {
+  width: 100%;
+  background: var(--accent);
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  padding: 11px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.name-submit-btn:disabled { opacity: 0.4; cursor: default; }
 
 .app-main {
   overflow-x: auto;

@@ -1,4 +1,4 @@
-export default function ActorSlot({ slot, actor, isWinner, isLoser, onClick }) {
+export default function ActorSlot({ slot, actor, isWinner, isLoser, onClick, submitted }) {
   if (!slot.actorId) {
     return (
       <div className="actor-slot empty">
@@ -11,7 +11,7 @@ export default function ActorSlot({ slot, actor, isWinner, isLoser, onClick }) {
     <button
       className={`actor-slot ${isWinner ? 'winner' : ''} ${isLoser ? 'loser' : ''}`}
       onClick={onClick}
-      disabled={!!isWinner || !!isLoser}
+      disabled={submitted}
     >
       {actor?.photo_url && (
         <img src={actor.photo_url} alt={actor.name} className="actor-photo" />

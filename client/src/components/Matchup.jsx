@@ -1,6 +1,6 @@
 import ActorSlot from './ActorSlot';
 
-export default function Matchup({ matchup, actorMap, onSelectWinner }) {
+export default function Matchup({ matchup, actorMap, onSelectWinner, submitted }) {
   const [s0, s1] = matchup.slots;
 
   return (
@@ -11,6 +11,7 @@ export default function Matchup({ matchup, actorMap, onSelectWinner }) {
         isWinner={matchup.winnerId === s0.actorId && !!s0.actorId}
         isLoser={matchup.winnerId && matchup.winnerId !== s0.actorId && !!s0.actorId}
         onClick={() => onSelectWinner(matchup.id, 0)}
+        submitted={submitted}
       />
       <div className="matchup-divider" />
       <ActorSlot
@@ -19,6 +20,7 @@ export default function Matchup({ matchup, actorMap, onSelectWinner }) {
         isWinner={matchup.winnerId === s1.actorId && !!s1.actorId}
         isLoser={matchup.winnerId && matchup.winnerId !== s1.actorId && !!s1.actorId}
         onClick={() => onSelectWinner(matchup.id, 1)}
+        submitted={submitted}
       />
     </div>
   );
