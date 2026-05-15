@@ -1,4 +1,5 @@
-import { kv } from '@vercel/kv';
+import { Redis } from '@upstash/redis';
+const kv = Redis.fromEnv();
 import { generateDailyBracket } from './_bracketGenerator.js';
 import { readFileSync } from 'fs';
 import { join } from 'path';
