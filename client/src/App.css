@@ -10,7 +10,7 @@
   --loss: #2a1a1a;
   --text: #e2e4f0;
   --muted: #7b7e9a;
-  --slot-h: 64px;
+  --slot-h: 56px;
 }
 
 body {
@@ -126,7 +126,7 @@ body {
 .bracket {
   display: flex;
   align-items: flex-start;
-  gap: 8px;
+  gap: 4px;
   min-width: max-content;
 }
 
@@ -196,7 +196,7 @@ body {
   border: 1px solid var(--border);
   border-radius: 6px;
   overflow: hidden;
-  width: 230px;
+  width: 190px;
   background: var(--surface);
 }
 
@@ -246,8 +246,8 @@ body {
 }
 
 .actor-photo {
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
@@ -289,9 +289,9 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 16px;
+  padding: 0 8px;
   gap: 12px;
-  min-width: 220px;
+  min-width: 200px;
   align-self: center;
 }
 
