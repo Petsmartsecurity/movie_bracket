@@ -1,6 +1,6 @@
 import { useState, useEffect, useReducer } from 'react';
 import Bracket from './components/Bracket';
-import { initBracket, selectWinner } from './bracketUtils';
+import { selectWinner } from './bracketUtils';
 import './App.css';
 
 function bracketReducer(state, action) {
@@ -20,14 +20,13 @@ export default function App() {
   const [bracketState, dispatch] = useReducer(bracketReducer, null);
 
   useEffect(() => {
-    fetch('/actors.json')
+    fetch('/api/bracket')
       .then(r => {
         if (!r.ok) throw new Error(`HTTP ${r.status}`);
         return r.json();
       })
       .then(data => {
-        const state = initBracket(data.actors);
-        dispatch({ type: 'INIT', state });
+        dispatch({ type: 'INIT', state: data });
         setLoading(false);
       })
       .catch(err => {
