@@ -1,0 +1,260 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0f1117;
+  --surface: #1a1d27;
+  --border: #2e3147;
+  --accent: #e8a020;
+  --win: #1a3a1a;
+  --win-border: #2d6e2d;
+  --loss: #2a1a1a;
+  --text: #e2e4f0;
+  --muted: #7b7e9a;
+  --slot-h: 64px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, sans-serif;
+  font-size: 13px;
+}
+
+/* ── Layout ─────────────────────────────────────────────────────────────── */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  text-align: center;
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.app-header h1 { font-size: 22px; color: var(--accent); }
+.app-header p  { color: var(--muted); margin-top: 4px; }
+
+.app-main {
+  overflow-x: auto;
+  padding: 20px;
+  flex: 1;
+}
+
+.status-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-size: 18px;
+  color: var(--muted);
+}
+.status-screen.error { color: #e05050; }
+
+/* ── Bracket ─────────────────────────────────────────────────────────────── */
+
+.bracket {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  min-width: max-content;
+}
+
+.bracket-side {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Division ──────────────────────────────────────────────────────────── */
+
+.division {
+  display: flex;
+  flex-direction: column;
+}
+
+.division-header {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding: 4px 8px;
+  margin-bottom: 6px;
+}
+
+.division-rounds {
+  display: flex;
+  align-items: stretch;
+}
+
+.round-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.round-label {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-align: center;
+  padding: 2px 6px 6px;
+}
+
+.round-matchups {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Each cell takes equal vertical space within its round,
+   so R1 has 8 cells (small), R2 has 4 (2x taller), etc. */
+.matchup-cell {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 4px 4px;
+}
+
+/* ── Matchup ─────────────────────────────────────────────────────────────── */
+
+.matchup {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  width: 230px;
+  background: var(--surface);
+}
+
+.matchup-divider {
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── Actor Slot ──────────────────────────────────────────────────────────── */
+
+.actor-slot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: var(--slot-h);
+  padding: 6px 8px;
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.actor-slot:not(.empty):not([disabled]):hover {
+  background: #252840;
+}
+
+.actor-slot.empty {
+  color: var(--muted);
+  cursor: default;
+  font-style: italic;
+  justify-content: center;
+  font-size: 11px;
+}
+
+.actor-slot.winner {
+  background: var(--win);
+  border-left: 3px solid var(--win-border);
+  cursor: default;
+}
+
+.actor-slot.loser {
+  background: var(--loss);
+  opacity: 0.5;
+  cursor: default;
+}
+
+.actor-photo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.actor-info { overflow: hidden; }
+
+.actor-name {
+  font-weight: 600;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.film-info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2px;
+}
+
+.film-title {
+  font-size: 11px;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.film-meta {
+  font-size: 10px;
+  color: #5a5d78;
+}
+
+/* ── Center / Final Four ──────────────────────────────────────────────────── */
+
+.bracket-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  gap: 12px;
+  min-width: 220px;
+  align-self: center;
+}
+
+.final-four-label, .championship-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.final-four {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.championship-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.champion-banner {
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent);
+  text-align: center;
+}
