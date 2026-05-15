@@ -1,3 +1,5 @@
+export const DIVISIONS = ['East', 'West', 'South', 'Midwest'];
+
 function getNextSlot(matchupId) {
   const divMatch = matchupId.match(/^div(\d+)-r(\d+)-m(\d+)$/);
   if (divMatch) {
