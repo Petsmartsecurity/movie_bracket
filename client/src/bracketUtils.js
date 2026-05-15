@@ -38,6 +38,7 @@ function getRound(matchupId) {
 function validateSlots(matchups) {
   const ids = Object.keys(matchups).sort((a, b) => getRound(a) - getRound(b));
   let updated = { ...matchups };
+  console.log('[validateSlots] input winners:', Object.fromEntries(Object.entries(matchups).filter(([,m]) => m.winnerId).map(([id,m]) => [id, m.winnerId])));
 
   for (const id of ids) {
     if (getRound(id) < 2) continue; // R1 actors are seeded — never clear them
@@ -55,6 +56,7 @@ function validateSlots(matchups) {
       const feeder = updated[feedingId];
       if (feeder?.winnerId === slot.actorId) continue; // still valid
 
+      console.log(`[validateSlots] clearing ${id} slot ${slotIdx} (${slot.actorId}) — feeder ${feedingId} winner is ${feeder?.winnerId}`);
       if (!newSlots) newSlots = [...matchup.slots];
       newWinnerId = null; // any missing participant invalidates the result
       newSlots[slotIdx] = { actorId: null, film: null };
@@ -64,6 +66,7 @@ function validateSlots(matchups) {
     // (e.g. a new pick overwrote the slot without touching winnerId)
     const effectiveSlots = newSlots ?? matchup.slots;
     if (newWinnerId && !effectiveSlots.some(s => s.actorId === newWinnerId)) {
+      console.log(`[validateSlots] clearing orphaned winner ${newWinnerId} from ${id} — slots are`, effectiveSlots.map(s => s.actorId));
       newWinnerId = null;
     }
 
