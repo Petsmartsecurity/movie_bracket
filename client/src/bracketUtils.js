@@ -56,7 +56,7 @@ function validateSlots(matchups) {
       if (feeder?.winnerId === slot.actorId) continue; // still valid
 
       if (!newSlots) newSlots = [...matchup.slots];
-      if (newWinnerId === slot.actorId) newWinnerId = null;
+      newWinnerId = null; // any missing participant invalidates the result
       newSlots[slotIdx] = { actorId: null, film: null };
     }
 
