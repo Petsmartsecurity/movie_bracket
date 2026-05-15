@@ -60,8 +60,15 @@ function validateSlots(matchups) {
       newSlots[slotIdx] = { actorId: null, film: null };
     }
 
-    if (newSlots) {
-      updated = { ...updated, [id]: { ...matchup, slots: newSlots, winnerId: newWinnerId } };
+    // Also clear winnerId if it no longer refers to an actor present in the slots
+    // (e.g. a new pick overwrote the slot without touching winnerId)
+    const effectiveSlots = newSlots ?? matchup.slots;
+    if (newWinnerId && !effectiveSlots.some(s => s.actorId === newWinnerId)) {
+      newWinnerId = null;
+    }
+
+    if (newSlots !== null || newWinnerId !== matchup.winnerId) {
+      updated = { ...updated, [id]: { ...matchup, slots: effectiveSlots, winnerId: newWinnerId } };
     }
   }
 
