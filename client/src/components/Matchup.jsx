@@ -1,27 +1,34 @@
 import ActorSlot from './ActorSlot';
+import MovieSlot from './MovieSlot';
 
-export default function Matchup({ matchup, actorMap, onSelectWinner, submitted }) {
+export default function Matchup({ matchup, entityMap, actorMap, onSelectWinner, submitted, mode = 'actors' }) {
+  const map = entityMap ?? actorMap ?? {};
+  const isMovies = mode === 'movies';
+  const SlotComp = isMovies ? MovieSlot : ActorSlot;
+  const getEntityId = s => isMovies ? s.movieId : s.actorId;
+
   const [s0, s1] = matchup.slots;
+  const eid0 = getEntityId(s0);
+  const eid1 = getEntityId(s1);
+  const w = matchup.winnerId;
+
+  function slotProps(slot, eid, slotIdx) {
+    const entityKey = isMovies ? 'movie' : 'actor';
+    return {
+      slot,
+      [entityKey]: eid ? map[eid] : null,
+      isWinner: !!(w && w === eid && eid),
+      isLoser:  !!(w && w !== eid && eid),
+      onClick: () => onSelectWinner(matchup.id, slotIdx),
+      submitted,
+    };
+  }
 
   return (
     <div className="matchup">
-      <ActorSlot
-        slot={s0}
-        actor={s0.actorId ? actorMap[s0.actorId] : null}
-        isWinner={matchup.winnerId === s0.actorId && !!s0.actorId}
-        isLoser={matchup.winnerId && matchup.winnerId !== s0.actorId && !!s0.actorId}
-        onClick={() => onSelectWinner(matchup.id, 0)}
-        submitted={submitted}
-      />
+      <SlotComp {...slotProps(s0, eid0, 0)} />
       <div className="matchup-divider" />
-      <ActorSlot
-        slot={s1}
-        actor={s1.actorId ? actorMap[s1.actorId] : null}
-        isWinner={matchup.winnerId === s1.actorId && !!s1.actorId}
-        isLoser={matchup.winnerId && matchup.winnerId !== s1.actorId && !!s1.actorId}
-        onClick={() => onSelectWinner(matchup.id, 1)}
-        submitted={submitted}
-      />
+      <SlotComp {...slotProps(s1, eid1, 1)} />
     </div>
   );
 }

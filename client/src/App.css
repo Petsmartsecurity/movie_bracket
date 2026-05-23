@@ -52,6 +52,45 @@ body {
 }
 .submit-btn:disabled { opacity: 0.6; cursor: default; }
 
+/* ── Mode Toggle ─────────────────────────────────────────────────────────── */
+
+.mode-toggle {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.mode-btn {
+  background: transparent;
+  color: var(--muted);
+  border: none;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.mode-btn:hover { background: #252840; color: var(--text); }
+.mode-btn.active {
+  background: var(--accent);
+  color: #000;
+}
+
+/* ── Era Selector ────────────────────────────────────────────────────────── */
+
+.era-select {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  font-size: 13px;
+  padding: 7px 10px;
+  cursor: pointer;
+  outline: none;
+}
+.era-select:focus { border-color: var(--accent); }
+
 .submit-error    { color: #e05050; font-size: 12px; }
 .submitted-badge { color: var(--win-border); font-weight: 600; font-size: 13px; }
 
