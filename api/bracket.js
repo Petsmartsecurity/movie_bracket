@@ -30,6 +30,11 @@ export default async function handler(req, res) {
     await kv.set(cacheKey, bracket, { ex: ttl });
   }
 
+  // Attach bracketId so the client knows which key to use for vote storage
+  if (bracket && typeof bracket === 'object' && !bracket.bracketId) {
+    bracket = { ...bracket, bracketId: `actors-${date}` };
+  }
+
   res.setHeader('Cache-Control', 'public, s-maxage=60');
   return res.status(200).json(bracket);
 }

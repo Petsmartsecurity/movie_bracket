@@ -6,7 +6,7 @@ const ACTOR_ROUND_LABELS = ['Round 1', 'Round 2', 'Sweet 16', 'Elite 8'];
 export default function Division({
   divIndex, name, matchups, entityMap, actorMap,
   onSelectWinner, reversed, submitted,
-  mode = 'actors',
+  mode = 'actors', voteResults,
 }) {
   const map = entityMap ?? actorMap;
   const isMovies = mode === 'movies';
@@ -40,6 +40,7 @@ export default function Division({
                     onSelectWinner={onSelectWinner}
                     submitted={submitted}
                     mode={mode}
+                    voteResults={voteResults}
                   />
                 </div>
               ))}

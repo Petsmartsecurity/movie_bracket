@@ -94,6 +94,26 @@ body {
 .submit-error    { color: #e05050; font-size: 12px; }
 .submitted-badge { color: var(--win-border); font-weight: 600; font-size: 13px; }
 
+.agreement-badge {
+  margin-top: 5px;
+  font-size: 12px;
+  color: var(--accent);
+}
+.agreement-badge strong { font-weight: 700; }
+
+/* ── Inline name prompt (movie submit before name is set) ────────────────── */
+.inline-name {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.name-input.inline {
+  width: 160px;
+  margin-bottom: 0;
+  padding: 8px 10px;
+  font-size: 13px;
+}
+
 /* ── Name Entry ──────────────────────────────────────────────────────────── */
 
 .name-entry-overlay {
@@ -242,6 +262,36 @@ body {
 .matchup-divider {
   height: 1px;
   background: var(--border);
+}
+
+/* ── Vote split bar (replaces divider after submission) ──────────────────── */
+
+.vote-split {
+  padding: 3px 6px 2px;
+  background: #13151f;
+}
+
+.vote-split-bar {
+  height: 4px;
+  background: #2a2d45;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.vote-split-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.vote-split-pcts {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  color: var(--muted);
+  margin-top: 2px;
+  letter-spacing: 0.02em;
 }
 
 /* ── Actor Slot ──────────────────────────────────────────────────────────── */

@@ -2,7 +2,7 @@ import Division from './Division';
 import Matchup from './Matchup';
 import { DIVISIONS } from '../bracketUtils';
 
-export default function Bracket({ state, onSelectWinner, submitted, mode = 'actors' }) {
+export default function Bracket({ state, onSelectWinner, submitted, mode = 'actors', voteResults }) {
   const { matchups } = state;
   const entityMap = mode === 'movies' ? state.movieMap : state.actorMap;
 
@@ -12,7 +12,7 @@ export default function Bracket({ state, onSelectWinner, submitted, mode = 'acto
     ? (mode === 'movies' ? winnerEntity.title : winnerEntity.name)
     : null;
 
-  const divProps = { matchups, entityMap, onSelectWinner, submitted, mode };
+  const divProps = { matchups, entityMap, onSelectWinner, submitted, mode, voteResults };
 
   return (
     <div className="bracket">
@@ -30,6 +30,7 @@ export default function Bracket({ state, onSelectWinner, submitted, mode = 'acto
             onSelectWinner={onSelectWinner}
             submitted={submitted}
             mode={mode}
+            voteResults={voteResults}
           />
           <div className="championship-wrap">
             <div className="championship-label">Championship</div>
@@ -39,6 +40,7 @@ export default function Bracket({ state, onSelectWinner, submitted, mode = 'acto
               onSelectWinner={onSelectWinner}
               submitted={submitted}
               mode={mode}
+              voteResults={voteResults}
             />
             {winnerName && (
               <div className="champion-banner">
@@ -52,6 +54,7 @@ export default function Bracket({ state, onSelectWinner, submitted, mode = 'acto
             onSelectWinner={onSelectWinner}
             submitted={submitted}
             mode={mode}
+            voteResults={voteResults}
           />
         </div>
       </div>

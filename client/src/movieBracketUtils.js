@@ -178,15 +178,24 @@ export function buildMovieBracket(movies) {
   return { matchups, movieMap };
 }
 
+export function collectPicksMovie(matchups) {
+  const picks = {};
+  for (const [id, m] of Object.entries(matchups)) {
+    if (m.winnerId) picks[id] = m.winnerId;
+  }
+  return picks;
+}
+
 // Available eras for filtering
+// slug is used as part of the bracketId for vote storage
 export const ERAS = [
-  { label: 'All Time',          start: 0,    end: 9999 },
-  { label: '2020s',             start: 2020, end: 2029 },
-  { label: '2010s',             start: 2010, end: 2019 },
-  { label: '2000s',             start: 2000, end: 2009 },
-  { label: '1990s',             start: 1990, end: 1999 },
-  { label: '1980s',             start: 1980, end: 1989 },
-  { label: '1970s',             start: 1970, end: 1979 },
-  { label: '1960s',             start: 1960, end: 1969 },
-  { label: 'Classic (pre-1960)', start: 0,   end: 1959 },
+  { label: 'All Time',           slug: 'alltime', start: 0,    end: 9999 },
+  { label: '2020s',              slug: '2020s',   start: 2020, end: 2029 },
+  { label: '2010s',              slug: '2010s',   start: 2010, end: 2019 },
+  { label: '2000s',              slug: '2000s',   start: 2000, end: 2009 },
+  { label: '1990s',              slug: '1990s',   start: 1990, end: 1999 },
+  { label: '1980s',              slug: '1980s',   start: 1980, end: 1989 },
+  { label: '1970s',              slug: '1970s',   start: 1970, end: 1979 },
+  { label: '1960s',              slug: '1960s',   start: 1960, end: 1969 },
+  { label: 'Classic (pre-1960)', slug: 'classic', start: 0,    end: 1959 },
 ];

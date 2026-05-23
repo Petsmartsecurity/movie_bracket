@@ -1,48 +1,55 @@
 import { Redis } from '@upstash/redis';
 const kv = Redis.fromEnv();
 
-function todayUTC() {
-  return new Date().toISOString().slice(0, 10);
-}
-
 export default async function handler(req, res) {
-  const date = todayUTC();
 
-  // POST /api/votes — submit a completed bracket
+  // ── POST /api/votes — submit a completed bracket ──────────────────────────
   if (req.method === 'POST') {
-    const { userId, picks } = req.body;
-    if (!userId || !picks || typeof picks !== 'object') {
-      return res.status(400).json({ error: 'userId and picks required' });
+    const { userId, picks, bracketId, mode } = req.body;
+
+    if (!userId || !picks || typeof picks !== 'object' || !bracketId) {
+      return res.status(400).json({ error: 'userId, picks, and bracketId required' });
     }
 
-    // picks: { [matchupId]: winnerActorId }
-    const voteKey = `votes:${date}`;
+    const voteKey = `votes:${bracketId}`;
+    const entry = JSON.stringify({
+      picks,
+      mode: mode ?? 'actors',
+      submittedAt: new Date().toISOString(),
+    });
 
-    // Store individual user's picks (overwrite if they resubmit)
-    await kv.hset(voteKey, { [userId]: JSON.stringify(picks) });
+    // Store user's picks (overwrites if they resubmit)
+    await kv.hset(voteKey, { [userId]: entry });
 
-    // Expire votes at midnight + 1 hour
-    const now = new Date();
-    const midnight = new Date(now);
-    midnight.setUTCHours(25, 0, 0, 0);
-    await kv.expireat(voteKey, Math.floor(midnight / 1000));
+    // Actor brackets expire at midnight+1 hr UTC; movie brackets are permanent
+    if (bracketId.startsWith('actors-')) {
+      const midnight = new Date();
+      midnight.setUTCHours(25, 0, 0, 0);
+      await kv.expireat(voteKey, Math.floor(midnight / 1000));
+    }
 
     return res.status(200).json({ ok: true });
   }
 
-  // GET /api/votes — return aggregate results for today
+  // ── GET /api/votes?bracketId=xxx — aggregate results ─────────────────────
   if (req.method === 'GET') {
-    const voteKey = `votes:${date}`;
+    const { bracketId } = req.query;
+    if (!bracketId) return res.status(400).json({ error: 'bracketId required' });
+
+    const voteKey = `votes:${bracketId}`;
     const allVotes = await kv.hgetall(voteKey);
 
     if (!allVotes) {
-      return res.status(200).json({ totalVoters: 0, matchupTotals: {} });
+      return res.status(200).json({ bracketId, totalVoters: 0, matchupTotals: {} });
     }
 
-    // Tally votes per matchup
-    const matchupTotals = {}; // { [matchupId]: { [actorId]: count } }
-    const allPicks = Object.values(allVotes).map(v => JSON.parse(v));
+    const allPicks = Object.values(allVotes).map(v => {
+      const parsed = typeof v === 'string' ? JSON.parse(v) : v;
+      // Support both new format { picks, mode, submittedAt } and old { [matchupId]: winnerId }
+      return parsed.picks ?? parsed;
+    });
 
+    const matchupTotals = {};
     for (const picks of allPicks) {
       for (const [matchupId, winnerId] of Object.entries(picks)) {
         if (!matchupTotals[matchupId]) matchupTotals[matchupId] = {};
@@ -50,10 +57,7 @@ export default async function handler(req, res) {
       }
     }
 
-    return res.status(200).json({
-      totalVoters: allPicks.length,
-      matchupTotals,
-    });
+    return res.status(200).json({ bracketId, totalVoters: allPicks.length, matchupTotals });
   }
 
   return res.status(405).json({ error: 'Method not allowed' });
