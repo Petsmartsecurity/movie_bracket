@@ -60,6 +60,48 @@
           "character": "Jayne Cobb"
         },
         {
+          "title": "American Underdog",
+          "year": 2021,
+          "imdb_id": "tt11729298",
+          "tmdb_id": 673309,
+          "imdb_rating": 7.1,
+          "imdb_votes": 422,
+          "worldwide_gross_usd": 26514814,
+          "genres": [
+            "Drama",
+            "Family"
+          ],
+          "character": "Coach Allen"
+        },
+        {
+          "title": "Radio Flyer",
+          "year": 1992,
+          "imdb_id": "tt0105211",
+          "tmdb_id": 20763,
+          "imdb_rating": 7.0,
+          "imdb_votes": 206,
+          "worldwide_gross_usd": 4651977,
+          "genres": [
+            "Drama"
+          ],
+          "character": "The King"
+        },
+        {
+          "title": "Independence Day",
+          "year": 1996,
+          "imdb_id": "tt0116629",
+          "tmdb_id": 602,
+          "imdb_rating": 6.9,
+          "imdb_votes": 10410,
+          "worldwide_gross_usd": 817400891,
+          "genres": [
+            "Action",
+            "Adventure",
+            "Science Fiction"
+          ],
+          "character": "Major Mitchell"
+        },
+        {
           "title": "Superman: Doomsday",
           "year": 2007,
           "imdb_id": "tt0934706",
@@ -75,6 +117,36 @@
           "character": "Superman / Clark Kent / Dark Superman (voice)"
         },
         {
+          "title": "Predator 2",
+          "year": 1990,
+          "imdb_id": "tt0100403",
+          "tmdb_id": 169,
+          "imdb_rating": 6.3,
+          "imdb_votes": 3816,
+          "worldwide_gross_usd": 57120318,
+          "genres": [
+            "Science Fiction",
+            "Action",
+            "Thriller"
+          ],
+          "character": "Garber"
+        },
+        {
+          "title": "My Bodyguard",
+          "year": 1980,
+          "imdb_id": "tt0081207",
+          "tmdb_id": 21873,
+          "imdb_rating": 6.3,
+          "imdb_votes": 127,
+          "worldwide_gross_usd": 22482952,
+          "genres": [
+            "Comedy",
+            "Drama",
+            "Family"
+          ],
+          "character": "Ricky Linderman"
+        },
+        {
           "title": "The Kid",
           "year": 2019,
           "imdb_id": "tt4975920",
@@ -88,6 +160,39 @@
             "Action"
           ],
           "character": "Bob Orlinger"
+        },
+        {
+          "title": "Next of Kin",
+          "year": 1989,
+          "imdb_id": "tt0097967",
+          "tmdb_id": 27418,
+          "imdb_rating": 5.9,
+          "imdb_votes": 251,
+          "worldwide_gross_usd": 15942628,
+          "genres": [
+            "Action",
+            "Adventure",
+            "Crime",
+            "Drama",
+            "Thriller"
+          ],
+          "character": "Joey Rosselin"
+        },
+        {
+          "title": "D.C. Cab",
+          "year": 1983,
+          "imdb_id": "tt0085387",
+          "tmdb_id": 27679,
+          "imdb_rating": 5.2,
+          "imdb_votes": 103,
+          "worldwide_gross_usd": 16134627,
+          "genres": [
+            "Adventure",
+            "Comedy",
+            "Crime",
+            "Action"
+          ],
+          "character": "Albert Hockenberry"
         }
       ]
     },
@@ -17753,6 +17858,21 @@
       "oscar_win_count": 1,
       "films": [
         {
+          "title": "The Young Girls of Rochefort",
+          "year": 1967,
+          "imdb_id": "tt0062873",
+          "tmdb_id": 2433,
+          "imdb_rating": 7.7,
+          "imdb_votes": 654,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "Romance",
+            "Comedy",
+            "Drama"
+          ],
+          "character": "Etienne"
+        },
+        {
           "title": "West Side Story",
           "year": 1961,
           "imdb_id": "tt0055614",
@@ -17766,6 +17886,63 @@
             "Romance"
           ],
           "character": "Bernardo"
+        },
+        {
+          "title": "Is Paris Burning?",
+          "year": 1966,
+          "imdb_id": "tt0060814",
+          "tmdb_id": 4708,
+          "imdb_rating": 7.2,
+          "imdb_votes": 226,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "War",
+            "Drama",
+            "History"
+          ],
+          "character": "GI in Tank"
+        },
+        {
+          "title": "Bebo's Girl",
+          "year": 1964,
+          "imdb_id": "tt0057444",
+          "tmdb_id": 58000,
+          "imdb_rating": 6.3,
+          "imdb_votes": 54,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "Drama"
+          ],
+          "character": "Bube"
+        },
+        {
+          "title": "633 Squadron",
+          "year": 1964,
+          "imdb_id": "tt0057811",
+          "tmdb_id": 15925,
+          "imdb_rating": 6.2,
+          "imdb_votes": 74,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "Drama",
+            "War"
+          ],
+          "character": "Lieutenant Erik Bergman"
+        },
+        {
+          "title": "The 5,000 Fingers of Dr. T.",
+          "year": 1953,
+          "imdb_id": "tt0045464",
+          "tmdb_id": 33743,
+          "imdb_rating": 6.2,
+          "imdb_votes": 64,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "Family",
+            "Fantasy",
+            "Music"
+          ],
+          "character": "Dancer"
         }
       ]
     },
@@ -21081,6 +21258,33 @@
           "character": "Katherine Joyce"
         },
         {
+          "title": "Europa '51",
+          "year": 1952,
+          "imdb_id": "tt0043511",
+          "tmdb_id": 41464,
+          "imdb_rating": 7.3,
+          "imdb_votes": 156,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "Drama"
+          ],
+          "character": "Irene Girard"
+        },
+        {
+          "title": "Cactus Flower",
+          "year": 1969,
+          "imdb_id": "tt0064117",
+          "tmdb_id": 28289,
+          "imdb_rating": 7.2,
+          "imdb_votes": 243,
+          "worldwide_gross_usd": 25800000,
+          "genres": [
+            "Comedy",
+            "Romance"
+          ],
+          "character": "Stephanie Dickinson"
+        },
+        {
           "title": "Murder on the Orient Express",
           "year": 1974,
           "imdb_id": "tt0071877",
@@ -21094,6 +21298,104 @@
             "Mystery"
           ],
           "character": "Greta Ohlson"
+        },
+        {
+          "title": "Stromboli",
+          "year": 1950,
+          "imdb_id": "tt0041931",
+          "tmdb_id": 4173,
+          "imdb_rating": 7.1,
+          "imdb_votes": 226,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "Drama"
+          ],
+          "character": "Karin Bjornsen"
+        },
+        {
+          "title": "The Inn of the Sixth Happiness",
+          "year": 1958,
+          "imdb_id": "tt0051776",
+          "tmdb_id": 37451,
+          "imdb_rating": 6.8,
+          "imdb_votes": 85,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "War",
+            "Drama"
+          ],
+          "character": "Gladys Aylward"
+        },
+        {
+          "title": "Anastasia",
+          "year": 1956,
+          "imdb_id": "tt0048947",
+          "tmdb_id": 38171,
+          "imdb_rating": 6.8,
+          "imdb_votes": 188,
+          "worldwide_gross_usd": 4300000,
+          "genres": [
+            "Drama",
+            "Romance"
+          ],
+          "character": "Anna Koreff / Anastasia"
+        },
+        {
+          "title": "Dead Men Don't Wear Plaid",
+          "year": 1982,
+          "imdb_id": "tt0083798",
+          "tmdb_id": 9442,
+          "imdb_rating": 6.7,
+          "imdb_votes": 442,
+          "worldwide_gross_usd": 18196170,
+          "genres": [
+            "Comedy",
+            "Mystery",
+            "Crime"
+          ],
+          "character": "(in \"Notorious\") (archive footage)"
+        },
+        {
+          "title": "Indiscreet",
+          "year": 1958,
+          "imdb_id": "tt0051773",
+          "tmdb_id": 22874,
+          "imdb_rating": 6.6,
+          "imdb_votes": 199,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "Comedy",
+            "Romance"
+          ],
+          "character": "Anna Kalman"
+        },
+        {
+          "title": "Fear",
+          "year": 1954,
+          "imdb_id": "tt0047336",
+          "tmdb_id": 96546,
+          "imdb_rating": 6.4,
+          "imdb_votes": 65,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "Drama"
+          ],
+          "character": "Irene Wagner"
+        },
+        {
+          "title": "The Yellow Rolls-Royce",
+          "year": 1964,
+          "imdb_id": "tt0059927",
+          "tmdb_id": 47616,
+          "imdb_rating": 6.1,
+          "imdb_votes": 61,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "Drama",
+            "Comedy",
+            "Romance"
+          ],
+          "character": "Gerda Millett"
         }
       ]
     },
@@ -24681,6 +24983,21 @@
           "character": "Young Nana (voice)"
         },
         {
+          "title": "Respect",
+          "year": 2021,
+          "imdb_id": "tt2452150",
+          "tmdb_id": 592863,
+          "imdb_rating": 6.8,
+          "imdb_votes": 463,
+          "worldwide_gross_usd": 31217372,
+          "genres": [
+            "Drama",
+            "Music",
+            "History"
+          ],
+          "character": "Aretha Franklin"
+        },
+        {
           "title": "GOAT",
           "year": 2026,
           "imdb_id": "tt27613895",
@@ -24710,6 +25027,19 @@
           "character": "Effie White"
         },
         {
+          "title": "The Three Stooges",
+          "year": 2012,
+          "imdb_id": "tt0383010",
+          "tmdb_id": 76489,
+          "imdb_rating": 5.8,
+          "imdb_votes": 34118,
+          "worldwide_gross_usd": 54819301,
+          "genres": [
+            "Comedy"
+          ],
+          "character": "Sister Rosemary"
+        },
+        {
           "title": "Sex and the City",
           "year": 2008,
           "imdb_id": "tt1000774",
@@ -24723,6 +25053,67 @@
             "Romance"
           ],
           "character": "Louise"
+        },
+        {
+          "title": "Breathe",
+          "year": 2024,
+          "imdb_id": "tt11540468",
+          "tmdb_id": 720321,
+          "imdb_rating": 5.7,
+          "imdb_votes": 291,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "Action",
+            "Science Fiction",
+            "Mystery",
+            "Thriller"
+          ],
+          "character": "Maya"
+        },
+        {
+          "title": "Chi-Raq",
+          "year": 2015,
+          "imdb_id": "tt4594834",
+          "tmdb_id": 340275,
+          "imdb_rating": 5.7,
+          "imdb_votes": 218,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "Drama",
+            "Crime",
+            "Comedy"
+          ],
+          "character": "Irene"
+        },
+        {
+          "title": "Sandy Wexler",
+          "year": 2017,
+          "imdb_id": "tt5893332",
+          "tmdb_id": 419700,
+          "imdb_rating": 5.5,
+          "imdb_votes": 19449,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "Comedy",
+            "Drama",
+            "Romance"
+          ],
+          "character": "Courtney Clarke"
+        },
+        {
+          "title": "Cats",
+          "year": 2019,
+          "imdb_id": "tt5697572",
+          "tmdb_id": 536869,
+          "imdb_rating": 4.1,
+          "imdb_votes": 58683,
+          "worldwide_gross_usd": 77276321,
+          "genres": [
+            "Fantasy",
+            "Comedy",
+            "Drama"
+          ],
+          "character": "Grizabella"
         }
       ]
     },
@@ -25849,6 +26240,19 @@
       "oscar_win_count": 1,
       "films": [
         {
+          "title": "Who's Minding the Store?",
+          "year": 1963,
+          "imdb_id": "tt0057683",
+          "tmdb_id": 42305,
+          "imdb_rating": 6.8,
+          "imdb_votes": 91,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "Comedy"
+          ],
+          "character": "Barbara Tuttle"
+        },
+        {
           "title": "Diamonds Are Forever",
           "year": 1971,
           "imdb_id": "tt0066995",
@@ -25861,6 +26265,50 @@
             "Thriller"
           ],
           "character": "Tiffany Case"
+        },
+        {
+          "title": "Tony Rome",
+          "year": 1967,
+          "imdb_id": "tt0062380",
+          "tmdb_id": 26204,
+          "imdb_rating": 6.3,
+          "imdb_votes": 69,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "Crime",
+            "Mystery",
+            "Thriller"
+          ],
+          "character": "Ann Archer"
+        },
+        {
+          "title": "The Concrete Jungle",
+          "year": 1982,
+          "imdb_id": "tt0083755",
+          "tmdb_id": 39457,
+          "imdb_rating": 6.0,
+          "imdb_votes": 71,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "Crime",
+            "Drama"
+          ],
+          "character": "Warden Fletcher"
+        },
+        {
+          "title": "The Lost World",
+          "year": 1960,
+          "imdb_id": "tt0054038",
+          "tmdb_id": 2982,
+          "imdb_rating": 5.8,
+          "imdb_votes": 111,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "Adventure",
+            "Fantasy",
+            "Science Fiction"
+          ],
+          "character": "Jennifer Holmes"
         }
       ]
     },
@@ -27966,6 +28414,19 @@
       "oscar_win_count": 0,
       "films": [
         {
+          "title": "Pay It Forward",
+          "year": 2000,
+          "imdb_id": "tt0223897",
+          "tmdb_id": 10647,
+          "imdb_rating": 7.4,
+          "imdb_votes": 128223,
+          "worldwide_gross_usd": 55707411,
+          "genres": [
+            "Drama"
+          ],
+          "character": "Ricky McKinney"
+        },
+        {
           "title": "U-571",
           "year": 2000,
           "imdb_id": "tt0141926",
@@ -27979,6 +28440,49 @@
             "Adventure"
           ],
           "character": "Lt. Pete Emmett"
+        },
+        {
+          "title": "New Year's Eve",
+          "year": 2011,
+          "imdb_id": "tt1598822",
+          "tmdb_id": 62838,
+          "imdb_rating": 5.9,
+          "imdb_votes": 91644,
+          "worldwide_gross_usd": 142044638,
+          "genres": [
+            "Comedy",
+            "Romance"
+          ],
+          "character": "Daniel Jensen"
+        },
+        {
+          "title": "Cry_Wolf",
+          "year": 2005,
+          "imdb_id": "tt0384286",
+          "tmdb_id": 10092,
+          "imdb_rating": 5.8,
+          "imdb_votes": 586,
+          "worldwide_gross_usd": 10047674,
+          "genres": [
+            "Horror",
+            "Thriller"
+          ],
+          "character": "Rich"
+        },
+        {
+          "title": "Vampires: Los Muertos",
+          "year": 2002,
+          "imdb_id": "tt0272147",
+          "tmdb_id": 10605,
+          "imdb_rating": 5.4,
+          "imdb_votes": 251,
+          "worldwide_gross_usd": 429189,
+          "genres": [
+            "Horror",
+            "Thriller",
+            "Action"
+          ],
+          "character": "Derek Bliss"
         }
       ]
     },
@@ -29927,6 +30431,76 @@
             "Mystery"
           ],
           "character": "Violet Venable"
+        },
+        {
+          "title": "Desk Set",
+          "year": 1957,
+          "imdb_id": "tt0050307",
+          "tmdb_id": 24203,
+          "imdb_rating": 7.0,
+          "imdb_votes": 129,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "Comedy",
+            "Romance"
+          ],
+          "character": "Bunny Watson"
+        },
+        {
+          "title": "Long Day's Journey Into Night",
+          "year": 1962,
+          "imdb_id": "tt0056196",
+          "tmdb_id": 43004,
+          "imdb_rating": 7.0,
+          "imdb_votes": 76,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "Drama"
+          ],
+          "character": "Mary Tyrone"
+        },
+        {
+          "title": "Summertime",
+          "year": 1955,
+          "imdb_id": "tt0048673",
+          "tmdb_id": 50363,
+          "imdb_rating": 6.8,
+          "imdb_votes": 170,
+          "worldwide_gross_usd": 6500000,
+          "genres": [
+            "Drama",
+            "Romance"
+          ],
+          "character": "Jane Hudson"
+        },
+        {
+          "title": "Rooster Cogburn",
+          "year": 1975,
+          "imdb_id": "tt0073636",
+          "tmdb_id": 17538,
+          "imdb_rating": 6.5,
+          "imdb_votes": 218,
+          "worldwide_gross_usd": 17594566,
+          "genres": [
+            "Adventure",
+            "Drama",
+            "Western"
+          ],
+          "character": "Eula Goodnight"
+        },
+        {
+          "title": "Pat and Mike",
+          "year": 1952,
+          "imdb_id": "tt0045012",
+          "tmdb_id": 33575,
+          "imdb_rating": 6.4,
+          "imdb_votes": 74,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "Comedy",
+            "Romance"
+          ],
+          "character": "Patricia \"Pat\" Pemberton"
         }
       ]
     },
@@ -33270,6 +33844,20 @@
       "oscar_win_count": 1,
       "films": [
         {
+          "title": "A Raisin in the Sun",
+          "year": 1961,
+          "imdb_id": "tt0055353",
+          "tmdb_id": 29478,
+          "imdb_rating": 7.7,
+          "imdb_votes": 148,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "Drama",
+            "Romance"
+          ],
+          "character": "George Murchison"
+        },
+        {
           "title": "An Officer and a Gentleman",
           "year": 1982,
           "imdb_id": "tt0084434",
@@ -33298,6 +33886,37 @@
           "character": "Jeriba 'Jerry' Shigan"
         },
         {
+          "title": "The Principal",
+          "year": 1987,
+          "imdb_id": "tt0093780",
+          "tmdb_id": 10081,
+          "imdb_rating": 6.5,
+          "imdb_votes": 308,
+          "worldwide_gross_usd": 19734940,
+          "genres": [
+            "Action",
+            "Adventure",
+            "Crime",
+            "Drama"
+          ],
+          "character": "Jake Phillips"
+        },
+        {
+          "title": "Toy Soldiers",
+          "year": 1991,
+          "imdb_id": "tt0103112",
+          "tmdb_id": 10750,
+          "imdb_rating": 6.5,
+          "imdb_votes": 378,
+          "worldwide_gross_usd": 15100000,
+          "genres": [
+            "Action",
+            "Adventure",
+            "Thriller"
+          ],
+          "character": "Dean Parker"
+        },
+        {
           "title": "IF",
           "year": 2024,
           "imdb_id": "tt11152168",
@@ -33313,6 +33932,50 @@
           "character": "Lewis (voice)"
         },
         {
+          "title": "The Laughing Policeman",
+          "year": 1973,
+          "imdb_id": "tt0070292",
+          "tmdb_id": 29735,
+          "imdb_rating": 6.2,
+          "imdb_votes": 73,
+          "worldwide_gross_usd": 1700000,
+          "genres": [
+            "Crime",
+            "Drama",
+            "Thriller"
+          ],
+          "character": "Insp. James Larrimore SFPD"
+        },
+        {
+          "title": "The Deep",
+          "year": 1977,
+          "imdb_id": "tt0075925",
+          "tmdb_id": 20416,
+          "imdb_rating": 6.0,
+          "imdb_votes": 263,
+          "worldwide_gross_usd": 100000000,
+          "genres": [
+            "Mystery",
+            "Thriller",
+            "Adventure"
+          ],
+          "character": "Henri Cloche"
+        },
+        {
+          "title": "The Landlord",
+          "year": 1970,
+          "imdb_id": "tt0065963",
+          "tmdb_id": 64828,
+          "imdb_rating": 5.9,
+          "imdb_votes": 50,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "Comedy",
+            "Drama"
+          ],
+          "character": "Copee Johnson"
+        },
+        {
           "title": "The Punisher",
           "year": 1989,
           "imdb_id": "tt0098141",
@@ -33326,6 +33989,48 @@
             "Drama"
           ],
           "character": "Jake Berkowitz"
+        },
+        {
+          "title": "Iron Eagle",
+          "year": 1986,
+          "imdb_id": "tt0091278",
+          "tmdb_id": 11037,
+          "imdb_rating": 5.6,
+          "imdb_votes": 334,
+          "worldwide_gross_usd": 24159872,
+          "genres": [
+            "Action"
+          ],
+          "character": "Charles 'Chappy' Sinclair"
+        },
+        {
+          "title": "Firewalker",
+          "year": 1986,
+          "imdb_id": "tt0091055",
+          "tmdb_id": 12715,
+          "imdb_rating": 5.4,
+          "imdb_votes": 207,
+          "worldwide_gross_usd": 11949484,
+          "genres": [
+            "Action",
+            "Adventure",
+            "Comedy"
+          ],
+          "character": "Leo Porter"
+        },
+        {
+          "title": "Jaws 3-D",
+          "year": 1983,
+          "imdb_id": "tt0085750",
+          "tmdb_id": 17692,
+          "imdb_rating": 4.5,
+          "imdb_votes": 52484,
+          "worldwide_gross_usd": 87987056,
+          "genres": [
+            "Thriller",
+            "Horror"
+          ],
+          "character": "Calvin Bouchard"
         }
       ]
     },
@@ -35410,6 +36115,35 @@
             "Crime"
           ],
           "character": "Marlee Matlin"
+        },
+        {
+          "title": "Children of a Lesser God",
+          "year": 1986,
+          "imdb_id": "tt0090830",
+          "tmdb_id": 1890,
+          "imdb_rating": 6.9,
+          "imdb_votes": 342,
+          "worldwide_gross_usd": 31853080,
+          "genres": [
+            "Drama",
+            "Romance"
+          ],
+          "character": "Sarah Norman"
+        },
+        {
+          "title": "Multiverse",
+          "year": 2021,
+          "imdb_id": "tt8953768",
+          "tmdb_id": 660833,
+          "imdb_rating": 6.6,
+          "imdb_votes": 345,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "Science Fiction",
+            "Thriller",
+            "Drama"
+          ],
+          "character": "Dierdre"
         },
         {
           "title": "Excision",
@@ -38579,6 +39313,22 @@
           "character": "Mary"
         },
         {
+          "title": "Baby Boy",
+          "year": 2001,
+          "imdb_id": "tt0255819",
+          "tmdb_id": 16161,
+          "imdb_rating": 7.1,
+          "imdb_votes": 355,
+          "worldwide_gross_usd": 29381649,
+          "genres": [
+            "Crime",
+            "Drama",
+            "Romance",
+            "Thriller"
+          ],
+          "character": "Patrice"
+        },
+        {
           "title": "Beerfest",
           "year": 2006,
           "imdb_id": "tt0486551",
@@ -38590,6 +39340,49 @@
             "Comedy"
           ],
           "character": "Cherry"
+        },
+        {
+          "title": "Welcome Home Roscoe Jenkins",
+          "year": 2008,
+          "imdb_id": "tt0494652",
+          "tmdb_id": 13490,
+          "imdb_rating": 6.0,
+          "imdb_votes": 310,
+          "worldwide_gross_usd": 43650785,
+          "genres": [
+            "Comedy",
+            "Drama",
+            "Family"
+          ],
+          "character": "Betty"
+        },
+        {
+          "title": "The Deliverance",
+          "year": 2024,
+          "imdb_id": "tt4196566",
+          "tmdb_id": 930600,
+          "imdb_rating": 6.0,
+          "imdb_votes": 24549,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "Horror",
+            "Thriller"
+          ],
+          "character": "Cynthia Henry"
+        },
+        {
+          "title": "Almost Christmas",
+          "year": 2016,
+          "imdb_id": "tt4649416",
+          "tmdb_id": 340402,
+          "imdb_rating": 6.0,
+          "imdb_votes": 394,
+          "worldwide_gross_usd": 42580920,
+          "genres": [
+            "Comedy",
+            "Drama"
+          ],
+          "character": "Aunt May"
         },
         {
           "title": "Domino",
@@ -38606,6 +39399,19 @@
             "Thriller"
           ],
           "character": "Lateesha Rodriguez"
+        },
+        {
+          "title": "Soul Plane",
+          "year": 2004,
+          "imdb_id": "tt0367085",
+          "tmdb_id": 12657,
+          "imdb_rating": 5.5,
+          "imdb_votes": 499,
+          "worldwide_gross_usd": 14800000,
+          "genres": [
+            "Comedy"
+          ],
+          "character": "Jamiqua"
         }
       ]
     },
@@ -42965,6 +43771,35 @@
       "oscar_win_count": 2,
       "films": [
         {
+          "title": "The Last of Sheila",
+          "year": 1973,
+          "imdb_id": "tt0070291",
+          "tmdb_id": 26331,
+          "imdb_rating": 7.0,
+          "imdb_votes": 168,
+          "worldwide_gross_usd": 2200000,
+          "genres": [
+            "Crime",
+            "Drama",
+            "Mystery",
+            "Thriller"
+          ],
+          "character": "Alice Wood"
+        },
+        {
+          "title": "How to Be a Latin Lover",
+          "year": 2017,
+          "imdb_id": "tt4795124",
+          "tmdb_id": 425134,
+          "imdb_rating": 6.9,
+          "imdb_votes": 657,
+          "worldwide_gross_usd": 26251899,
+          "genres": [
+            "Comedy"
+          ],
+          "character": "Celeste"
+        },
+        {
           "title": "Fantastic Voyage",
           "year": 1966,
           "imdb_id": "tt0060397",
@@ -42992,6 +43827,151 @@
             "Romance"
           ],
           "character": "Constance de Bonancieux"
+        },
+        {
+          "title": "Bandolero!",
+          "year": 1968,
+          "imdb_id": "tt0062708",
+          "tmdb_id": 41857,
+          "imdb_rating": 6.6,
+          "imdb_votes": 131,
+          "worldwide_gross_usd": 12000000,
+          "genres": [
+            "Western"
+          ],
+          "character": "Maria Stoner"
+        },
+        {
+          "title": "The Four Musketeers",
+          "year": 1974,
+          "imdb_id": "tt0073012",
+          "tmdb_id": 12310,
+          "imdb_rating": 6.5,
+          "imdb_votes": 218,
+          "worldwide_gross_usd": 8760000,
+          "genres": [
+            "Action",
+            "Adventure",
+            "Comedy",
+            "Drama"
+          ],
+          "character": "Constance de Bonancieux"
+        },
+        {
+          "title": "Hannie Caulder",
+          "year": 1971,
+          "imdb_id": "tt0068675",
+          "tmdb_id": 31283,
+          "imdb_rating": 6.2,
+          "imdb_votes": 137,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "Drama",
+            "Western",
+            "Crime"
+          ],
+          "character": "Hannie Caulder"
+        },
+        {
+          "title": "Lady in Cement",
+          "year": 1968,
+          "imdb_id": "tt0063210",
+          "tmdb_id": 42630,
+          "imdb_rating": 6.2,
+          "imdb_votes": 62,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "Mystery",
+            "Crime",
+            "Thriller"
+          ],
+          "character": "Kit Forrest"
+        },
+        {
+          "title": "Bedazzled",
+          "year": 1967,
+          "imdb_id": "tt0061391",
+          "tmdb_id": 18209,
+          "imdb_rating": 6.2,
+          "imdb_votes": 175,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "Fantasy",
+            "Comedy",
+            "Romance"
+          ],
+          "character": "Lilian Lust"
+        },
+        {
+          "title": "One Million Years B.C.",
+          "year": 1966,
+          "imdb_id": "tt0060782",
+          "tmdb_id": 3591,
+          "imdb_rating": 6.1,
+          "imdb_votes": 243,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "Adventure",
+            "Fantasy"
+          ],
+          "character": "Loana"
+        },
+        {
+          "title": "The Prince and the Pauper",
+          "year": 1977,
+          "imdb_id": "tt0077381",
+          "tmdb_id": 22815,
+          "imdb_rating": 6.1,
+          "imdb_votes": 60,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "Drama",
+            "Adventure"
+          ],
+          "character": "Lady Edith"
+        },
+        {
+          "title": "Animal",
+          "year": 1977,
+          "imdb_id": "tt0075683",
+          "tmdb_id": 8767,
+          "imdb_rating": 6.1,
+          "imdb_votes": 128,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "Comedy"
+          ],
+          "character": "Jane Gardner"
+        },
+        {
+          "title": "100 Rifles",
+          "year": 1969,
+          "imdb_id": "tt0063970",
+          "tmdb_id": 37308,
+          "imdb_rating": 5.9,
+          "imdb_votes": 108,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "Adventure",
+            "Western",
+            "War"
+          ],
+          "character": "Sarita"
+        },
+        {
+          "title": "Bluebeard",
+          "year": 1972,
+          "imdb_id": "tt0068294",
+          "tmdb_id": 27116,
+          "imdb_rating": 5.4,
+          "imdb_votes": 55,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "Thriller",
+            "Horror",
+            "Comedy"
+          ],
+          "character": "Magdalena"
         }
       ]
     },
@@ -43907,6 +44887,32 @@
       "imdb_url": "https://www.imdb.com/name/nm0000500/",
       "oscar_win_count": 2,
       "films": [
+        {
+          "title": "Side by Side",
+          "year": 2012,
+          "imdb_id": "tt2014338",
+          "tmdb_id": 110354,
+          "imdb_rating": 7.2,
+          "imdb_votes": 13782,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "Documentary"
+          ],
+          "character": "Self"
+        },
+        {
+          "title": "Hitchcock/Truffaut",
+          "year": 2015,
+          "imdb_id": "tt3748512",
+          "tmdb_id": 339751,
+          "imdb_rating": 7.2,
+          "imdb_votes": 252,
+          "worldwide_gross_usd": 302459,
+          "genres": [
+            "Documentary"
+          ],
+          "character": "Self"
+        },
         {
           "title": "Slacker",
           "year": 1990,
@@ -46641,6 +47647,21 @@
       "oscar_win_count": 1,
       "films": [
         {
+          "title": "Giant",
+          "year": 1956,
+          "imdb_id": "tt0049261",
+          "tmdb_id": 1712,
+          "imdb_rating": 7.6,
+          "imdb_votes": 44201,
+          "worldwide_gross_usd": 32855818,
+          "genres": [
+            "Drama",
+            "Western",
+            "Romance"
+          ],
+          "character": "Angel Obregón II"
+        },
+        {
           "title": "Rebel Without a Cause",
           "year": 1955,
           "imdb_id": "tt0048545",
@@ -46652,6 +47673,60 @@
             "Drama"
           ],
           "character": "John 'Plato' Crawford"
+        },
+        {
+          "title": "Somebody Up There Likes Me",
+          "year": 1956,
+          "imdb_id": "tt0049778",
+          "tmdb_id": 28000,
+          "imdb_rating": 7.2,
+          "imdb_votes": 184,
+          "worldwide_gross_usd": 3360000,
+          "genres": [
+            "Drama"
+          ],
+          "character": "Romolo"
+        },
+        {
+          "title": "Exodus",
+          "year": 1960,
+          "imdb_id": "tt0053804",
+          "tmdb_id": 1941,
+          "imdb_rating": 6.7,
+          "imdb_votes": 228,
+          "worldwide_gross_usd": 20000000,
+          "genres": [
+            "Drama",
+            "War"
+          ],
+          "character": "Dov Landau"
+        },
+        {
+          "title": "Cheyenne Autumn",
+          "year": 1964,
+          "imdb_id": "tt0057940",
+          "tmdb_id": 40630,
+          "imdb_rating": 6.7,
+          "imdb_votes": 145,
+          "worldwide_gross_usd": 10980,
+          "genres": [
+            "Western"
+          ],
+          "character": "Red Shirt"
+        },
+        {
+          "title": "Escape from the Planet of the Apes",
+          "year": 1971,
+          "imdb_id": "tt0067065",
+          "tmdb_id": 1687,
+          "imdb_rating": 6.4,
+          "imdb_votes": 1220,
+          "worldwide_gross_usd": 12348905,
+          "genres": [
+            "Action",
+            "Science Fiction"
+          ],
+          "character": "Dr. Milo"
         }
       ]
     },
@@ -52085,6 +53160,33 @@
             "Crime"
           ],
           "character": "Leonard Vole"
+        },
+        {
+          "title": "The Long Gray Line",
+          "year": 1955,
+          "imdb_id": "tt0048312",
+          "tmdb_id": 61934,
+          "imdb_rating": 7.0,
+          "imdb_votes": 57,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "Comedy",
+            "Drama"
+          ],
+          "character": "Martin Maher"
+        },
+        {
+          "title": "Rawhide",
+          "year": 1951,
+          "imdb_id": "tt0043959",
+          "tmdb_id": 43380,
+          "imdb_rating": 6.7,
+          "imdb_votes": 60,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "Western"
+          ],
+          "character": "Tom Owens"
         }
       ]
     },
@@ -53894,6 +54996,36 @@
             "Drama"
           ],
           "character": "Soonja"
+        },
+        {
+          "title": "Beasts Clawing at Straws",
+          "year": 2020,
+          "imdb_id": "tt9747594",
+          "tmdb_id": 571648,
+          "imdb_rating": 7.1,
+          "imdb_votes": 278,
+          "worldwide_gross_usd": 5707415,
+          "genres": [
+            "Mystery",
+            "Thriller",
+            "Crime",
+            "Drama"
+          ],
+          "character": "Soon-ja"
+        },
+        {
+          "title": "The Housemaid",
+          "year": 2010,
+          "imdb_id": "tt1314652",
+          "tmdb_id": 45202,
+          "imdb_rating": 6.3,
+          "imdb_votes": 375,
+          "worldwide_gross_usd": null,
+          "genres": [
+            "Thriller",
+            "Drama"
+          ],
+          "character": "Byeong-sik a.k.a. Miss Cho"
         }
       ]
     },
