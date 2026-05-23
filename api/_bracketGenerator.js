@@ -30,6 +30,18 @@ const MIN_FILMS = 6;
 const BRACKET_SIZE = 64;
 const ROUNDS = 6;
 
+// Compute an actor's peak active decade (decade where they had the most films)
+function peakDecade(actor) {
+  const years = (actor.films || []).map(f => f.year).filter(y => y > 1950);
+  if (!years.length) return 0;
+  const counts = {};
+  for (const y of years) {
+    const d = Math.floor(y / 10) * 10;
+    counts[d] = (counts[d] || 0) + 1;
+  }
+  return Number(Object.entries(counts).sort((a, b) => b[1] - a[1])[0][0]);
+}
+
 // Snake seeding across 4 divisions
 function assignDivisions(seeded) {
   const divActors = [[], [], [], []];
@@ -44,17 +56,28 @@ function assignDivisions(seeded) {
 
 const R1_PAIRS = [[0,15],[1,14],[2,13],[3,12],[4,11],[5,10],[6,9],[7,8]];
 
-export function generateDailyBracket(actors, dateStr) {
-  const rng = seededRng(dateSeed(dateStr));
+export function generateDailyBracket(actors, dateStr, era = null) {
+  const rng = seededRng(dateSeed(dateStr + (era || '')));
 
   // Seed actors by avg rating, take top 64 with enough films
-  const eligible = actors
+  // If era is specified (e.g. "1970s"), filter to actors whose peak decade matches
+  let eligible = actors
     .filter(a => a.films && a.films.length >= MIN_FILMS)
     .map(a => {
       const ratings = a.films.filter(f => f.imdb_rating).map(f => f.imdb_rating);
       const avg = ratings.length ? ratings.reduce((x, y) => x + y, 0) / ratings.length : 0;
-      return { ...a, avgRating: avg };
-    })
+      return { ...a, avgRating: avg, _peakDecade: peakDecade(a) };
+    });
+
+  if (era && era !== 'alltime') {
+    // era slug is like "1970s" → parse the decade year
+    const targetDecade = parseInt(era.replace(/s$/i, ''));
+    if (!isNaN(targetDecade)) {
+      eligible = eligible.filter(a => a._peakDecade === targetDecade);
+    }
+  }
+
+  eligible = eligible
     .sort((a, b) => b.avgRating - a.avgRating)
     .slice(0, BRACKET_SIZE);
 
@@ -79,14 +102,14 @@ export function generateDailyBracket(actors, dateStr) {
 
   divisions.forEach((divActors, divIndex) => {
     R1_PAIRS.forEach(([topIdx, botIdx], matchIndex) => {
-      const a1 = divActors[topIdx];
-      const a2 = divActors[botIdx];
+      const a1 = divActors[topIdx] ?? null;
+      const a2 = divActors[botIdx] ?? null;
       matchups[`div${divIndex}-r0-m${matchIndex}`] = {
         id: `div${divIndex}-r0-m${matchIndex}`,
         round: 0, divIndex, matchIndex,
         slots: [
-          { actorId: a1.imdb_id, film: actorRoundFilms[a1.imdb_id][0] },
-          { actorId: a2.imdb_id, film: actorRoundFilms[a2.imdb_id][0] },
+          { actorId: a1?.imdb_id ?? null, film: a1 ? (actorRoundFilms[a1.imdb_id]?.[0] ?? null) : null },
+          { actorId: a2?.imdb_id ?? null, film: a2 ? (actorRoundFilms[a2.imdb_id]?.[0] ?? null) : null },
         ],
         winnerId: null,
       };

@@ -4,7 +4,7 @@ import NameEntry from './components/NameEntry';
 import { selectWinner, allPicksMade, collectPicks } from './bracketUtils';
 import {
   selectWinnerMovie, allPicksMadeMovie, buildMovieBracket,
-  collectPicksMovie, ERAS,
+  collectPicksMovie, ERAS, ACTOR_ERAS,
 } from './movieBracketUtils';
 import './App.css';
 
@@ -45,8 +45,9 @@ function computeAgreement(picks, voteResults) {
 
 export default function App() {
   // Mode: 'actors' | 'movies'
-  const [mode, setMode] = useState('actors');
-  const [era, setEra]   = useState(ERAS[0]);
+  const [mode, setMode]         = useState('actors');
+  const [era, setEra]           = useState(ERAS[0]);
+  const [actorEra, setActorEra] = useState(ACTOR_ERAS[0]);
 
   // Actor bracket
   const [actorLoading, setActorLoading] = useState(true);
@@ -73,9 +74,14 @@ export default function App() {
   const [actorVoteResults, setActorVoteResults] = useState(null);
   const [movieVoteResults, setMovieVoteResults] = useState(null);
 
-  // ── Load actor bracket ─────────────────────────────────────────────────────
+  // ── Load actor bracket (re-fetches when actorEra changes) ─────────────────
   useEffect(() => {
-    fetch('/api/bracket')
+    setActorLoading(true);
+    setActorError(null);
+    const url = actorEra.slug === 'alltime'
+      ? '/api/bracket'
+      : `/api/bracket?era=${encodeURIComponent(actorEra.slug)}`;
+    fetch(url)
       .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
       .then(data => {
         actorDispatch({ type: 'INIT', state: data });
@@ -83,7 +89,7 @@ export default function App() {
         setActorLoading(false);
       })
       .catch(err => { setActorError(err.message); setActorLoading(false); });
-  }, []);
+  }, [actorEra]);
 
   // ── Load movies.json, rebuild bracket when era changes ────────────────────
   useEffect(() => {
@@ -110,6 +116,13 @@ export default function App() {
       setSubmitError(null);
     }
   }, [era]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Reset actor bracket state when era changes
+  useEffect(() => {
+    setActorSubmitted(false);
+    setActorVoteResults(null);
+    setSubmitError(null);
+  }, [actorEra]); // eslint-disable-line react-hooks/exhaustive-deps
 
   function rebuildMovieBracket(movies, selectedEra) {
     const filtered = movies
@@ -212,6 +225,7 @@ export default function App() {
   }
 
   const title = isActors ? 'Actor Performance Bracket' : 'Movie Bracket';
+  const actorEraLabel = actorEra.slug === 'alltime' ? 'All Time' : actorEra.label;
 
   return (
     <div className="app">
@@ -221,8 +235,8 @@ export default function App() {
           <p>
             {isActors
               ? (submitted
-                  ? `Submitted as ${userName}`
-                  : `Filling out as ${userName}`)
+                  ? `Submitted as ${userName} · ${actorEraLabel}`
+                  : `${actorEraLabel} · ${userName}`)
               : `Top movies · ${era.label}`}
           </p>
           {agreement && (
@@ -237,8 +251,18 @@ export default function App() {
         </div>
 
         <div className="app-header-right">
-          {/* Era selector (movies only) */}
-          {!isActors && (
+          {/* Era selector */}
+          {isActors ? (
+            <select
+              className="era-select"
+              value={actorEra.slug}
+              onChange={e => setActorEra(ACTOR_ERAS.find(r => r.slug === e.target.value))}
+            >
+              {ACTOR_ERAS.map(r => (
+                <option key={r.slug} value={r.slug}>{r.label}</option>
+              ))}
+            </select>
+          ) : (
             <select
               className="era-select"
               value={era.label}

@@ -186,7 +186,7 @@ export function collectPicksMovie(matchups) {
   return picks;
 }
 
-// Available eras for filtering
+// Available eras for filtering movies (by release year)
 // slug is used as part of the bracketId for vote storage
 export const ERAS = [
   { label: 'All Time',           slug: 'alltime', start: 0,    end: 9999 },
@@ -198,4 +198,17 @@ export const ERAS = [
   { label: '1970s',              slug: '1970s',   start: 1970, end: 1979 },
   { label: '1960s',              slug: '1960s',   start: 1960, end: 1969 },
   { label: 'Classic (pre-1960)', slug: 'classic', start: 0,    end: 1959 },
+];
+
+// Available eras for filtering actors (by peak active decade)
+// slug is passed as ?era= query param to /api/bracket
+export const ACTOR_ERAS = [
+  { label: 'All Time', slug: 'alltime' },
+  { label: '2020s',    slug: '2020s'   },
+  { label: '2010s',    slug: '2010s'   },
+  { label: '2000s',    slug: '2000s'   },
+  { label: '1990s',    slug: '1990s'   },
+  { label: '1980s',    slug: '1980s'   },
+  { label: '1970s',    slug: '1970s'   },
+  { label: '1960s',    slug: '1960s'   },
 ];
