@@ -17,17 +17,11 @@
       "tmdb_id": 2059,
       "birth_year": "1962",
       "photo_url": "https://image.tmdb.org/t/p/w342/lfbyJWNWGbiYfU0Yr1tjn6Trd2V.jpg",
-      "oscar_wins": [
-        {
-          "film": "Darling",
-          "year": 1965,
-          "category": "Best Actress"
-        }
-      ],
-      "oscar_nominations": 4,
+      "oscar_wins": [],
+      "oscar_nominations": 0,
       "is_top_box_office": false,
       "imdb_url": "https://www.imdb.com/name/nm0000284/",
-      "oscar_win_count": 1,
+      "oscar_win_count": 0,
       "films": [
         {
           "title": "Full Metal Jacket",
@@ -6182,7 +6176,7 @@
       "birth_year": "1964",
       "photo_url": "https://image.tmdb.org/t/p/w342/ylGktmhDCLnaaV8owSPL8cVlsbn.jpg",
       "oscar_wins": [],
-      "oscar_nominations": 5,
+      "oscar_nominations": 0,
       "is_top_box_office": false,
       "imdb_url": "https://www.imdb.com/name/nm0000403/",
       "oscar_win_count": 0,
@@ -17847,9 +17841,9 @@
       "photo_url": "https://image.tmdb.org/t/p/w342/sMLOJp6TipR6HIZb2mUSw6fwNXN.jpg",
       "oscar_wins": [
         {
-          "film": "Harry and Tonto",
-          "year": 1974,
-          "category": "Best Actor"
+          "film": "West Side Story",
+          "year": 1962,
+          "category": "Best Supporting Actor"
         }
       ],
       "oscar_nominations": 1,
@@ -26227,17 +26221,11 @@
       "tmdb_id": 10190,
       "birth_year": "1940",
       "photo_url": "https://image.tmdb.org/t/p/w342/o0LKSONTaFmjuf9ntKa4oVbOLKq.jpg",
-      "oscar_wins": [
-        {
-          "film": "In the Heat of the Night",
-          "year": 1967,
-          "category": "Best Actor"
-        }
-      ],
-      "oscar_nominations": 3,
+      "oscar_wins": [],
+      "oscar_nominations": 0,
       "is_top_box_office": false,
       "imdb_url": "https://www.imdb.com/name/nm0001762/",
-      "oscar_win_count": 1,
+      "oscar_win_count": 0,
       "films": [
         {
           "title": "Who's Minding the Store?",
@@ -44870,22 +44858,11 @@
       "tmdb_id": 564,
       "birth_year": "1960",
       "photo_url": "https://image.tmdb.org/t/p/w342/xSctxeZQzQbZoaxIvcDeHlDjbiN.jpg",
-      "oscar_wins": [
-        {
-          "film": "Mister Roberts",
-          "year": 1955,
-          "category": "Best Supporting Actor"
-        },
-        {
-          "film": "Save the Tiger",
-          "year": 1973,
-          "category": "Best Actor"
-        }
-      ],
-      "oscar_nominations": 8,
+      "oscar_wins": [],
+      "oscar_nominations": 0,
       "is_top_box_office": false,
       "imdb_url": "https://www.imdb.com/name/nm0000500/",
-      "oscar_win_count": 2,
+      "oscar_win_count": 0,
       "films": [
         {
           "title": "Side by Side",
@@ -47634,17 +47611,11 @@
       "tmdb_id": 2770,
       "birth_year": "1939",
       "photo_url": "https://image.tmdb.org/t/p/w342/glfs6BXlFIMprrJSuiT74VzJIOJ.jpg",
-      "oscar_wins": [
-        {
-          "film": "Cabaret",
-          "year": 1972,
-          "category": "Best Actress"
-        }
-      ],
+      "oscar_wins": [],
       "oscar_nominations": 2,
       "is_top_box_office": false,
       "imdb_url": "https://www.imdb.com/name/nm0000543/",
-      "oscar_win_count": 1,
+      "oscar_win_count": 0,
       "films": [
         {
           "title": "Giant",
@@ -53134,17 +53105,11 @@
       "tmdb_id": 10922,
       "birth_year": "1914",
       "photo_url": "https://image.tmdb.org/t/p/w342/iUyYe8JNOegoe0efRja4scocHYq.jpg",
-      "oscar_wins": [
-        {
-          "film": "Lilies of the Field",
-          "year": 1963,
-          "category": "Best Actor"
-        }
-      ],
-      "oscar_nominations": 2,
+      "oscar_wins": [],
+      "oscar_nominations": 0,
       "is_top_box_office": false,
       "imdb_url": "https://www.imdb.com/name/nm0000061/",
-      "oscar_win_count": 1,
+      "oscar_win_count": 0,
       "films": [
         {
           "title": "Witness for the Prosecution",
