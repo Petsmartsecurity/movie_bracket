@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Bracket from './components/Bracket';
 import NameEntry from './components/NameEntry';
 import { collectPicks } from './bracketUtils';
-import { collectPicksMovie, ERAS, ACTOR_ERAS } from './movieBracketUtils';
+import { collectPicksMovie, ERAS, DECADE_ERAS, YEAR_ERAS, ACTOR_ERAS } from './movieBracketUtils';
 import { useBracket } from './hooks/useBracket';
 import { useMovieBracket } from './hooks/useMovieBracket';
 import './App.css';
@@ -111,10 +111,19 @@ export default function App() {
           ) : (
             <select
               className="era-select"
-              value={era.label}
-              onChange={e => setEra(ERAS.find(r => r.label === e.target.value))}
+              value={era.slug}
+              onChange={e => setEra(ERAS.find(r => r.slug === e.target.value))}
             >
-              {ERAS.map(r => <option key={r.label} value={r.label}>{r.label}</option>)}
+              <optgroup label="By Decade">
+                {DECADE_ERAS.map(r => (
+                  <option key={r.slug} value={r.slug}>{r.label}</option>
+                ))}
+              </optgroup>
+              <optgroup label="By Year">
+                {YEAR_ERAS.map(r => (
+                  <option key={r.slug} value={r.slug}>{r.label}</option>
+                ))}
+              </optgroup>
             </select>
           )}
 

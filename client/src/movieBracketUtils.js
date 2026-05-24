@@ -186,9 +186,14 @@ export function collectPicksMovie(matchups) {
   return picks;
 }
 
-// Available eras for filtering movies (by release year)
-// slug is used as part of the bracketId for vote storage
-export const ERAS = [
+// Available eras for filtering movies (by release year).
+// slug is used as part of the bracketId for vote storage.
+//
+// Split into DECADE_ERAS and YEAR_ERAS so the UI can render them in
+// separate <optgroup> sections. ERAS is the combined flat list used
+// by filtering logic (start/end range) and slug lookups.
+
+export const DECADE_ERAS = [
   { label: 'All Time',           slug: 'alltime', start: 0,    end: 9999 },
   { label: '2020s',              slug: '2020s',   start: 2020, end: 2029 },
   { label: '2010s',              slug: '2010s',   start: 2010, end: 2019 },
@@ -199,6 +204,24 @@ export const ERAS = [
   { label: '1960s',              slug: '1960s',   start: 1960, end: 1969 },
   { label: 'Classic (pre-1960)', slug: 'classic', start: 0,    end: 1959 },
 ];
+
+// Per-year eras from 2015 onward. movies.json coverage grows over time;
+// slots for years with fewer than 32 qualifying movies will show as TBD.
+export const YEAR_ERAS = [
+  { label: '2025', slug: '2025', start: 2025, end: 2025 },
+  { label: '2024', slug: '2024', start: 2024, end: 2024 },
+  { label: '2023', slug: '2023', start: 2023, end: 2023 },
+  { label: '2022', slug: '2022', start: 2022, end: 2022 },
+  { label: '2021', slug: '2021', start: 2021, end: 2021 },
+  { label: '2020', slug: '2020', start: 2020, end: 2020 },
+  { label: '2019', slug: '2019', start: 2019, end: 2019 },
+  { label: '2018', slug: '2018', start: 2018, end: 2018 },
+  { label: '2017', slug: '2017', start: 2017, end: 2017 },
+  { label: '2016', slug: '2016', start: 2016, end: 2016 },
+  { label: '2015', slug: '2015', start: 2015, end: 2015 },
+];
+
+export const ERAS = [...DECADE_ERAS, ...YEAR_ERAS];
 
 // Available eras for filtering actors (by peak active decade)
 // slug is passed as ?era= query param to /api/bracket
