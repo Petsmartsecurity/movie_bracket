@@ -29,11 +29,13 @@ export default async function handler(req, res) {
     const actorsPath = join(process.cwd(), 'client', 'public', 'actors.json');
     const { actors } = JSON.parse(readFileSync(actorsPath, 'utf-8'));
     bracket = generateDailyBracket(actors, date, era === 'alltime' ? null : era);
-    // Cache until midnight UTC + 1 hour buffer
+    // Cache until 1 AM UTC the next day (midnight + 1 hr buffer).
+    // setUTCHours(25) overflows into the next calendar day — equivalent to
+    // "tomorrow at 01:00 UTC" without manual date arithmetic.
     const now = new Date();
-    const midnight = new Date(now);
-    midnight.setUTCHours(25, 0, 0, 0); // next day 1am UTC
-    const ttl = Math.floor((midnight - now) / 1000);
+    const expiry = new Date(now);
+    expiry.setUTCHours(25, 0, 0, 0);
+    const ttl = Math.floor((expiry - now) / 1000);
     await kv.set(cacheKey, bracket, { ex: ttl });
   }
 

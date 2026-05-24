@@ -104,13 +104,6 @@ export function selectWinner(state, matchupId, slotIndex) {
   return { ...state, matchups: newMatchups };
 }
 
-export function isComplete(matchups) {
-  return Object.values(matchups).every(m =>
-    m.slots.every(s => s.actorId === null || s.actorId !== null) &&
-    (m.slots.some(s => s.actorId === null) || m.winnerId !== null)
-  );
-}
-
 // Returns true only when every matchup that has both actors filled has a winner
 export function allPicksMade(matchups) {
   return Object.values(matchups).every(m => {
