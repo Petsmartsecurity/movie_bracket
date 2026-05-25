@@ -59,14 +59,30 @@ const R1_PAIRS = [[0,15],[1,14],[2,13],[3,12],[4,11],[5,10],[6,9],[7,8]];
 export function generateDailyBracket(actors, dateStr, era = null) {
   const rng = seededRng(dateSeed(dateStr + (era || '')));
 
-  // Seed actors by avg rating, take top 64 with enough films
-  // If era is specified (e.g. "1970s"), filter to actors whose peak decade matches
+  // Seed actors by composite score: avg(rating × log10(votes)) + oscar bonus.
+  //
+  // Pure avg-rating seeding over-rewards actors with small prestige filmographies
+  // (e.g. Kurosawa-era actors whose IMDB voter base is cinephile-skewed).
+  // Multiplying by log10(votes) naturally down-weights obscure films while still
+  // rewarding critically acclaimed blockbusters — The Godfather (2.2M votes, 9.2)
+  // scores far higher than a well-rated film with 8k votes.
+  //
+  // Oscar bonus: win = 1.5 pts, nom = 0.3 pts, capped at 5.0.
+  // This lifts decorated careers (Nicholson, Streep) above pure popularity contests.
   let eligible = actors
     .filter(a => a.films && a.films.length >= MIN_FILMS)
     .map(a => {
-      const ratings = a.films.filter(f => f.imdb_rating).map(f => f.imdb_rating);
-      const avg = ratings.length ? ratings.reduce((x, y) => x + y, 0) / ratings.length : 0;
-      return { ...a, avgRating: avg, _peakDecade: peakDecade(a) };
+      const filmScores = a.films
+        .filter(f => f.imdb_rating && f.imdb_votes && f.imdb_votes > 0)
+        .map(f => f.imdb_rating * Math.log10(Math.max(f.imdb_votes, 1000)));
+      const avgFilmScore = filmScores.length
+        ? filmScores.reduce((x, y) => x + y, 0) / filmScores.length
+        : 0;
+      const oscarBonus = Math.min(
+        (a.oscar_win_count || 0) * 1.5 + (a.oscar_nominations || 0) * 0.3,
+        5.0
+      );
+      return { ...a, _score: avgFilmScore + oscarBonus, _peakDecade: peakDecade(a) };
     });
 
   if (era && era !== 'alltime') {
@@ -78,7 +94,7 @@ export function generateDailyBracket(actors, dateStr, era = null) {
   }
 
   eligible = eligible
-    .sort((a, b) => b.avgRating - a.avgRating)
+    .sort((a, b) => b._score - a._score)
     .slice(0, BRACKET_SIZE);
 
   const divisions = assignDivisions(eligible);
